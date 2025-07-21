@@ -1,6 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+
+
+
+/* 
+
+
+// <weight>: Use a value from 300 to 800
+// <uniquifier>: Use a unique and descriptive class name
+
+.open-sans-<uniquifier> {
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+
+*/
+
+
 *{
 
     padding:0; 
     margin:0; 
     box-sizing: border-box;
+}
+
+body{
+    background: #EEAECA;
+    background: linear-gradient(272deg, rgba(238, 174, 202, 1) 10%, rgba(198, 165, 242, 1) 63%, rgba(133, 175, 222, 1) 95%);
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+    "wdth" 100;
+
+
+
+}
+
+
+.grid-container{
+
+    display:grid; 
+    grid-template-columns: 10% 3fr 10%;
+    min-height: 100vh;
+    grid-template-rows: .5fr 2.5fr .2fr;;
+    grid-template-areas: 
+    "option option option"
+    ". maincalc hist "
+    ". . ."
+    ;
+}
+
+.option-header{
+
+    grid-area: option;
+    display: flex;
+    justify-content: space-between;
+}
+
+.calc-grid{
+    grid-area: maincalc;
+    display: grid;
+    grid-template-columns: repeat(4, 6.25rem);
+    grid-template-rows: minmax(7.5rem, auto) repeat(5, 6.25rem);
+    justify-content: center;
+
+}
+
+.calc-grid button {
+
+    cursor: pointer;
+    font-size: 1.2rem;
+    background-color: hsla(337, 25%, 90%, 0.7);
+    border: #ffffff 1px solid;
+
+
+}
+
+.calc-grid button:hover{
+
+background-color: hsla(337, 25%, 90%, 0.95);
+
+}
+
+.calc__two{
+
+    grid-column: span 2;
+
+}
+
+.output{
+
+    grid-column: 1/-1 ;
+    background-color:   hsla(212, 94%, 19%, 0.76);
+    border: 3px solid  hsl(212, 94%, 19%);
+
 }
