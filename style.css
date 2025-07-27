@@ -1,123 +1,107 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
 
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
 
-
-
-/* 
-
-
-// <weight>: Use a value from 300 to 800
-// <uniquifier>: Use a unique and descriptive class name
-
-.open-sans-<uniquifier> {
+body {
+  background: #eeaeca;
+  background: linear-gradient(
+    272deg,
+    rgba(238, 174, 202, 1) 10%,
+    rgba(198, 165, 242, 1) 63%,
+    rgba(133, 175, 222, 1) 95%
+  );
   font-family: "Open Sans", sans-serif;
   font-optical-sizing: auto;
-  font-weight: <weight>;
+  font-weight: 400;
   font-style: normal;
-  font-variation-settings:
-    "wdth" 100;
+  font-variation-settings: "wdth" 100;
 }
 
-
-*/
-
-
-*{
-    padding:0; 
-    margin:0; 
-    box-sizing: border-box;
-}
-
-body{
-    background: #EEAECA;
-    background: linear-gradient(272deg, rgba(238, 174, 202, 1) 10%, rgba(198, 165, 242, 1) 63%, rgba(133, 175, 222, 1) 95%);
-    font-family: "Open Sans", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
-    font-variation-settings:
-    "wdth" 100;
-
-}
-
-
-.grid-container{
-
-    display:grid; 
-    grid-template-columns: 10% 3fr 10%;
-    min-height: 100vh;
-    grid-template-rows: .5fr 2.5fr .2fr;;
-    grid-template-areas: 
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  min-height: 100vh;
+  grid-template-rows: 0.2fr 2.5fr 0.2fr;
+  grid-template-areas:
     "option option option"
     ". maincalc hist "
-    ". . ."
-    ;
+    ". . .";
 }
 
-.option-header{
-
-    grid-area: option;
-    display: flex;
-    justify-content: space-between;
+.hidden-history {
+  background-color: hsl(237.19deg 34.33% 60.8% / 83%);
+  border: #ffffff 1px solid;
+  grid-area: hist;
+  padding: 0.5em;
+  border-radius: 1rem;
+  box-shadow: #5b586f -2px 5px 6px 3px;
+  height: 50%;
 }
 
-.calc-grid{
-    grid-area: maincalc;
-    display: grid;
-    grid-template-columns: repeat(4, 6.25rem);
-    grid-template-rows: minmax(7.5rem, auto) repeat(5, 6.25rem);
-    justify-content: center;
-    grid-gap: 10px;
-
-}
-.output{
-
-    grid-column: 1/-1 ;
-    background-color:   hsl(237.19deg 34.33% 60.8% / 83%);
-    border: #ffffff 1px solid;
-    display: flex;
-    justify-content: space-around;
-    word-break: break-all;
-    word-wrap: break-word;
-    align-items: flex-end;
-    flex-direction: column;
-    padding: .5em; 
-    border-radius: 1rem; 
-
+.option-header {
+  grid-area: option;
+  display: flex;
+  justify-content: space-between;
 }
 
-.output .previous{
-
-    color:#ddd0d5d0; 
-    font-size: 1.5rem;
+.calc-grid {
+  grid-area: maincalc;
+  display: grid;
+  grid-template-columns: repeat(4, 6.25rem);
+  grid-template-rows: minmax(7.5rem, auto) repeat(5, 6.25rem);
+  justify-content: center;
+  grid-gap: 10px;
+}
+.output {
+  grid-column: 1/-1;
+  background-color: hsl(237.19deg 34.33% 60.8% / 83%);
+  border: #ffffff 1px solid;
+  display: flex;
+  justify-content: space-around;
+  word-break: break-all;
+  word-wrap: break-word;
+  align-items: flex-end;
+  flex-direction: column;
+  padding: 0.5em;
+  border-radius: 1rem;
+  box-shadow: #5b586f -2px 5px 6px 3px;
 }
 
-.output .current{
+.output .history {
+  color: #ddd0d5d0;
+  font-size: 1.5rem;
+  align-self: flex-start;
+  margin: 0 1rem;
+}
 
-    color:#dfdfdff8; 
-    font-size: 2rem;
+.output .previous {
+  color: #ddd0d5d0;
+  padding: 0.5rem 0;
+  font-size: 1.5rem;
+}
+
+.output .current {
+  color: #dfdfdff8;
+  font-size: 2rem;
 }
 
 .calc-grid button {
-
-    cursor: pointer;
-    font-size: 1.7rem;
-    background-color: hsla(337, 25%, 90%, 0.7);
-    border: #ffffff 1px solid;
-    border-radius: 10rem;
-
-
+  cursor: pointer;
+  font-size: 1.7rem;
+  background-color: hsla(337, 25%, 90%, 0.7);
+  border: #ffffff 1px solid;
+  border-radius: 10rem;
+  box-shadow: #5b586f 1px 5px 5px 2px;
 }
 
-.calc-grid button:hover{
-
-background-color: hsla(337, 25%, 90%, 0.95);
-
+.calc-grid button:hover {
+  background-color: hsla(337, 25%, 90%, 0.95);
 }
 
-.calc__two{
-
-    grid-column: span 2;
-
+.calc__two {
+  grid-column: span 2;
 }
-
