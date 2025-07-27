@@ -3,7 +3,7 @@
  # 🧮 JavaScript Calculator
 
 A fully functional calculator built with HTML, CSS, and JavaScript. This project performs basic arithmetic operations and handles common input edge cases like division by zero, multiplication by decimals, and deletion of previous integers. 
-You look at a live Demo here: https://calculator-project-beta-sand.vercel.app/
+You can look at a live Demo here: https://calculator-project-beta-sand.vercel.app/
 
 ## 🚀 Features
 
